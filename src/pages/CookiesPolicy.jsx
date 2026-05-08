@@ -1,8 +1,10 @@
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Legal.css'
 
 export default function CookiesPolicy() {
+  usePageTitle('Cookies Policy')
   return (
     <div className="legal-page">
       <HeroBanner title="Cookies Policy" subtitle="We use cookies to improve your experience, keep things secure, and understand how Coinsend is used." lastUpdated="April 30, 2026" />
@@ -27,7 +29,7 @@ export default function CookiesPolicy() {
             <h2>Updates to This Policy</h2>
             <p>We may update this Cookies Policy from time to time to reflect changes in our practices or for regulatory reasons. We encourage you to review this policy periodically.</p>
             <h2>Contact Us</h2>
-            <p>If you have any questions about our use of cookies, please contact us at privacy@coinsend.com.</p>
+            <p>If you have any questions about our use of cookies, please contact us at privacy@coinsend.io.</p>
           </div>
         </div>
       </section>

@@ -1,8 +1,14 @@
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './About.css'
 
+import aboutTeamImg from '../assets/images/about-team.png'
+import aboutManImg from '../assets/images/about-man.jpg'
+import aboutWomanImg from '../assets/images/about-woman.jpg'
+
 export default function About() {
+  usePageTitle('About Us')
   return (
     <div className="about-page">
       <HeroBanner
@@ -14,13 +20,13 @@ export default function About() {
         <div className="about-photos__inner container">
           <div className="about-photos__grid">
             <div className="about-photo about-photo--1">
-              <div className="about-photo__placeholder">👩🏾‍💼</div>
+              <img src={aboutTeamImg} alt="Coinsend team celebrating together" className="about-photo__img" />
             </div>
             <div className="about-photo about-photo--2">
-              <div className="about-photo__placeholder">👨🏾‍⚕️</div>
+              <img src={aboutManImg} alt="Young man using Coinsend on his phone" className="about-photo__img" />
             </div>
             <div className="about-photo about-photo--3">
-              <div className="about-photo__placeholder">👩🏽‍💻</div>
+              <img src={aboutWomanImg} alt="Woman checking Coinsend app" className="about-photo__img" />
             </div>
           </div>
         </div>
@@ -38,7 +44,7 @@ export default function About() {
             <div className="about-content__sidebar">
               <div className="about-stat">
                 <span className="about-stat__label">FOUNDED</span>
-                <span className="about-stat__value">1994</span>
+                <span className="about-stat__value">2026</span>
               </div>
               <div className="about-mission">
                 <h3>OUR MISSION</h3>

@@ -1,6 +1,7 @@
 import HeroSection from '../components/HeroSection'
 import ScrollTileRoll from '../components/ScrollTileRoll'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Home.css'
 
 import womanPhoneImg from '../assets/images/woman-braids.png'
@@ -12,6 +13,7 @@ import avatar3Img from '../assets/images/avatar-3.png'
 
 
 export default function Home() {
+  usePageTitle(null)
   return (
     <div className="home">
 

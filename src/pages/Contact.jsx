@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Contact.css'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  usePageTitle('Contact Us')
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
@@ -46,14 +48,14 @@ export default function Contact() {
                 <div className="contact-info__icon">📱</div>
                 <div>
                   <h4>Phone</h4>
-                  <p>+254 700 000 000</p>
+                  <p>+254 768 294 351</p>
                 </div>
               </div>
               <div className="contact-info__item">
                 <div className="contact-info__icon">📧</div>
                 <div>
                   <h4>Email</h4>
-                  <p>support@coinsend.com</p>
+                  <p>support@coinsend.io</p>
                 </div>
               </div>
               <div className="contact-info__item">
@@ -64,7 +66,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4>WhatsApp</h4>
-                  <p>+254 700 000 000</p>
+                  <p>+254 768 294 351</p>
                 </div>
               </div>
             </div>

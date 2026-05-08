@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './FAQ.css'
 
 const categories = ['General', 'Transactions & Transfers', 'Fees & Rates', 'Security & Trust']
@@ -15,12 +16,13 @@ const faqData = [
   { q: 'What withdrawal methods are available?', a: 'We support multiple withdrawal methods including M-Pesa, bank transfer, and direct wallet withdrawals. You can choose the method that works best for you.', category: 'Transactions & Transfers' },
   { q: 'How does the referral program work?', a: 'Invite friends to join Coinsend and earn rewards! When your referral signs up and makes their first transaction, both of you receive cashback bonuses.', category: 'General' },
   { q: 'Can I use Coinsend for bill payments?', a: 'Yes! You can pay utility bills, purchase airtime, and buy data bundles directly from your Coinsend wallet. It\'s a convenient all-in-one financial tool.', category: 'Transactions & Transfers' },
-  { q: 'How do I contact support?', a: 'Our 24/7 support team is available through the app\'s chat feature, via email at support@coinsend.com, or through our social media channels. We\'re always here to help.', category: 'Security & Trust' },
+  { q: 'How do I contact support?', a: 'Our 24/7 support team is available through the app\'s chat feature, via email at support@coinsend.io, or through our social media channels. We\'re always here to help.', category: 'Security & Trust' },
 ]
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
   const [activeCategory, setActiveCategory] = useState('General')
+  usePageTitle('FAQs')
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i)
 
   const filteredFaqs = faqData.filter(item => item.category === activeCategory)

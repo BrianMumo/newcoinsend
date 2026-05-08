@@ -1,8 +1,10 @@
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Legal.css'
 
 export default function PrivacyPolicy() {
+  usePageTitle('Privacy Policy')
   return (
     <div className="legal-page">
       <HeroBanner title="Privacy Policy" subtitle="We take your privacy seriously. This policy outlines how we collect, use, and protect your personal information." lastUpdated="April 30, 2026" />
@@ -27,7 +29,7 @@ export default function PrivacyPolicy() {
             <h2>Your Rights</h2>
             <p>You have the right to access, correct, or delete your personal data; opt out of marketing communications; request data portability; and withdraw consent at any time.</p>
             <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy, please contact us at privacy@coinsend.com or through the Contact Us page on our website.</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at privacy@coinsend.io or through the Contact Us page on our website.</p>
           </div>
         </div>
       </section>

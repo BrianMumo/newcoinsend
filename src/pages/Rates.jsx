@@ -1,8 +1,10 @@
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Rates.css'
 
 export default function Rates() {
+  usePageTitle('Rates')
   return (
     <div className="rates-page">
       <HeroBanner

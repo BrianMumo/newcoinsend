@@ -1,8 +1,10 @@
 import HeroBanner from '../components/HeroBanner'
 import CTASection from '../components/CTASection'
+import usePageTitle from '../hooks/usePageTitle'
 import './Legal.css'
 
 export default function Terms() {
+  usePageTitle('Terms & Conditions')
   return (
     <div className="legal-page">
       <HeroBanner title="Terms & Conditions" subtitle="By using Coinsend, you agree to the following terms and conditions. Please read them carefully before using our services." lastUpdated="April 30, 2026" />
@@ -32,7 +34,7 @@ export default function Terms() {
             <h2>Changes to Terms</h2>
             <p>We may update these Terms & Conditions from time to time. We will notify users of material changes through the app or email. Continued use of Coinsend after changes constitutes acceptance of the updated terms.</p>
             <h2>Contact</h2>
-            <p>For any questions regarding these Terms & Conditions, please contact us at legal@coinsend.com or through the Contact Us page.</p>
+            <p>For any questions regarding these Terms & Conditions, please contact us at legal@coinsend.io or through the Contact Us page.</p>
           </div>
         </div>
       </section>
