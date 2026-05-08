@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './HeroSection.css'
 
 import heroPhoneImg from '../assets/images/hero-phone.png'
@@ -32,9 +33,9 @@ export default function HeroSection() {
             Send, receive, and spend across borders with Coinsend. We trade
             stablecoins to make your everyday payment easier and faster.
           </p>
-          <a href="#" className="hero__cta" id="hero-get-started">
+          <Link to="/coming-soon" className="hero__cta" id="hero-get-started">
             Get Started
-          </a>
+          </Link>
         </div>
 
         {/* RIGHT — Phone mockup + floating elements */}
