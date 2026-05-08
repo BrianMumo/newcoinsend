@@ -1,0 +1,106 @@
+.text-green { color: var(--primary-800); }
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.rate-table-card {
+  background: var(--coinsend-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+}
+
+.rate-table-card__title {
+  font-size: 20px;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 20px;
+  color: var(--neutral-900);
+}
+
+.rate-table__row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--neutral-100);
+  font-size: 15px;
+  color: var(--neutral-700);
+}
+
+.rate-table__row--header {
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-400);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rate-table-card__note {
+  font-size: 12px;
+  color: var(--neutral-400);
+  margin-top: 16px;
+}
+
+.rates-converter {
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.rates-converter h3 {
+  font-size: 24px;
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rates-converter__card {
+  background: var(--coinsend-white);
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-xl);
+  padding: 28px;
+}
+
+.rates-converter .rate-card__input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--neutral-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--neutral-200);
+}
+
+.rates-converter .rate-card__input {
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--neutral-900);
+  border: none;
+  background: none;
+  width: 140px;
+}
+
+.rates-converter .rate-card__currency {
+  font-size: 15px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-700);
+}
+
+.rates-converter .rate-card__arrow {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.rates-converter .rate-card__rate {
+  text-align: center;
+  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .rates-grid { grid-template-columns: 1fr; }
+}

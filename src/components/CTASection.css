@@ -1,0 +1,302 @@
+/* ============================
+   CTA SECTION — "Get started on Coinsend today"
+   Figma Inspect (exact values):
+     Ad Banner wrapper:  W 1440 Hug × H 764 Hug, padding 120px horizontal
+     Ad Banner (inner):  W 1200 × H 524, border-radius 32, clip content ON, spacing -198
+     Phone mockup:       W 1049 × H 865, X 328 Y 18 (Image fill, 100% opacity)
+     Pattern:            W 1820 × H 1820, opacity 3%, fill "Accent Color"
+     Text group:         W 446 × H 268, X 80 Y 128, gap 32
+     Title:              Poppins Medium 48px, color Coinsend White
+     Subtitle:           Poppins Medium 16px / 140%, color Coinsend White
+   ============================ */
+
+/* Outer section — white background, vertical spacing */
+.cta-section {
+  background: var(--coinsend-white);
+  padding: 80px 0;
+}
+
+/* ---- Green rounded banner ---- */
+.cta-section__banner {
+  background: var(--primary-800);
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  /* Fixed height matching Figma — phones overflow and get clipped */
+  height: 524px;
+}
+
+/* ---- Wavy pattern overlay ---- */
+/* Original cta-pattern.png — topographic wave lines.
+   Figma: 1820×1820, fill "Accent Color", 3% opacity.
+   The PNG is white/light-gray. We use mix-blend-mode to make
+   the wave lines subtly visible on the green background. */
+.cta-section__pattern {
+  position: absolute;
+  width: 1820px;
+  height: 1820px;
+  left: -614px;
+  top: -910px;
+  opacity: 0.08;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 1;
+  max-width: none; /* override global img { max-width: 100% } */
+}
+
+/* ---- Content grid ---- */
+.cta-section__grid {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Left: heading, subtitle, buttons ---- */
+/* Figma: text group at X:80 Y:128, auto layout vertical gap 32 */
+.cta-section__content {
+  position: absolute;
+  left: 80px;
+  top: 128px;
+  max-width: 446px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  z-index: 3;
+}
+
+/* Figma: Poppins Medium 48px, Coinsend White */
+.cta-section__title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 120%;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* Figma: Poppins Medium 16px / 140%, Coinsend White */
+.cta-section__subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 140%;
+  max-width: 446px;
+  margin: -16px 0 0 0; /* tighten gap between title and subtitle */
+}
+
+/* ---- App Store Buttons (white pills) ---- */
+.cta-section__buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.cta-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--coinsend-white);
+  border-radius: 100px;
+  color: #111111;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-store-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-store-btn svg {
+  flex-shrink: 0;
+}
+
+.cta-store-btn__label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.cta-store-btn__label small {
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-store-btn__label span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+}
+
+/* ---- Right: phone mockup ---- */
+/* Figma: 1049×865, positioned at X:328 Y:18 within 1200×524 banner
+   The phones intentionally overflow the bottom of the banner and are clipped.
+   The banner uses "clip content" and negative spacing (-198) to overlay phones on text area. */
+.cta-section__mockup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cta-section__phones-img {
+  position: absolute;
+  /* Figma exact position: X:328 Y:18 within 1200px banner */
+  left: 328px;
+  top: 18px;
+  /* Figma exact dimensions: W:1049 H:865 */
+  width: 1049px;
+  height: 865px;
+  max-width: none; /* CRITICAL: override global img { max-width: 100% } so phone can overflow */
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media (max-width: 1280px) {
+  .cta-section__phones-img {
+    /* Scale proportionally for smaller containers */
+    left: 27.33%;
+    width: 87.42%;
+    height: auto;
+  }
+
+  .cta-section__content {
+    left: 60px;
+    top: 100px;
+  }
+
+  .cta-section__title {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cta-section__banner {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .cta-section__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 48px 48px 0;
+    max-width: 50%;
+  }
+
+  .cta-section__title {
+    font-size: 36px;
+  }
+
+  .cta-section__phones-img {
+    left: 40%;
+    top: 10px;
+    width: 70%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 48px 0;
+  }
+
+  .cta-section__banner {
+    border-radius: 24px;
+    height: auto;
+    min-height: auto;
+  }
+
+  .cta-section__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-section__content {
+    position: relative;
+    left: auto;
+    top: auto;
+    max-width: 100%;
+    padding: 40px 32px 24px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta-section__title {
+    font-size: 32px;
+  }
+
+  .cta-section__subtitle {
+    max-width: 100%;
+  }
+
+  .cta-section__buttons {
+    justify-content: center;
+  }
+
+  .cta-section__mockup {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .cta-section__phones-img {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 90%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cta-section__pattern {
+    width: 1200px;
+    height: 1200px;
+    left: -400px;
+    top: -600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section__content {
+    padding: 32px 24px 20px;
+  }
+
+  .cta-section__title {
+    font-size: 28px;
+  }
+
+  .cta-section__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-store-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta-section__phones-img {
+    width: 100%;
+    max-width: 360px;
+  }
+}

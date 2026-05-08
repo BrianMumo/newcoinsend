@@ -1,0 +1,109 @@
+.faq-content__inner { max-width: 800px; margin: 0 auto; }
+
+/* ---- Filter Buttons ---- */
+.faq-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.faq-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #F5F5F5;
+  color: var(--neutral-700);
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.faq-filter-btn:hover {
+  background: var(--neutral-200);
+}
+
+.faq-filter-btn--active {
+  background: #111111;
+  color: #FFFFFF;
+}
+
+.faq-filter-btn--active:hover {
+  background: #222222;
+}
+
+/* ---- FAQ Accordion ---- */
+.faq-list { display: flex; flex-direction: column; gap: 4px; }
+
+.faq-item {
+  border: 1px solid var(--neutral-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover { border-color: var(--neutral-300); }
+
+.faq-item--open { border-color: var(--primary-400); background: var(--primary-50); }
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-900);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.faq-item__icon {
+  font-size: 24px;
+  font-weight: var(--font-weight-light);
+  color: var(--primary-800);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item--open .faq-item__answer {
+  max-height: 300px;
+  padding: 0 24px 20px;
+}
+
+.faq-item__answer p {
+  font-size: 15px;
+  color: var(--neutral-600);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .faq-filters {
+    gap: 6px;
+  }
+  .faq-filter-btn {
+    font-size: 13px;
+    padding: 8px 14px;
+  }
+}

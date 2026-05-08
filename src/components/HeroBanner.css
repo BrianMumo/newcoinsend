@@ -1,0 +1,81 @@
+.hero-banner {
+  background-color: var(--neutral-900);
+  padding: 160px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-banner__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-banner__badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: var(--accent-orange);
+  color: var(--coinsend-white);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
+}
+
+.hero-banner__title {
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--coinsend-white);
+  line-height: 74px;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.hero-banner__subtitle {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 12px;
+  text-align: center;
+}
+
+.hero-banner__date {
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 8px;
+}
+
+.hero-banner__gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at top right, rgba(27, 195, 58, 0.08) 0%, transparent 70%);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 120px 0 60px;
+  }
+  .hero-banner__title {
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+  }
+  .hero-banner__subtitle {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner__title {
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+}

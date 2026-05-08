@@ -1,0 +1,53 @@
+/* =========================================
+   LEGAL PAGES — Shared Styles
+   (Privacy, Cookies, Terms)
+   ========================================= */
+
+.legal-body {
+  max-width: 800px;
+}
+
+.legal-body h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--neutral-900);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+
+.legal-body h3 {
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--neutral-800);
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.legal-body p {
+  font-size: 16px;
+  color: #71717A;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.legal-body ul {
+  margin-left: 20px;
+  margin-bottom: 14px;
+}
+
+.legal-body ul li {
+  font-size: 16px;
+  color: var(--neutral-600);
+  line-height: 1.8;
+  list-style: disc;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .legal-body h2 { font-size: 20px; }
+  .legal-body h3 { font-size: 16px; }
+}
